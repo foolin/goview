@@ -1,4 +1,7 @@
 # Basic
+
+[![GoDoc Widget]][GoDoc] 
+
 goview support for gin template
 
 ## Install
@@ -66,3 +69,6 @@ See in "examples/basic" folder
 ## More examples
 
 See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a variety of examples.
+
+[GoDoc]: https://godoc.org/github.com/foolin/goview/supports/ginview
+[GoDoc Widget]: https://godoc.org/github.com/foolin/goview/supports/ginview?status.svg

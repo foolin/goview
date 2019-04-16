@@ -1,4 +1,7 @@
 # Basic
+
+[![GoDoc Widget]][GoDoc] 
+
 goview support for go.rice
 
 ## Install
@@ -89,3 +92,6 @@ See in "examples/gorice" folder
 ## More examples
 
 See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a variety of examples.
+
+[GoDoc]: https://godoc.org/github.com/foolin/goview/supports/gorice
+[GoDoc Widget]: https://godoc.org/github.com/foolin/goview/supports/gorice?status.svg
