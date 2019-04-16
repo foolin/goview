@@ -13,11 +13,11 @@ func ExampleDefault() {
 	   Project structure:
 
 	   |-- app/views/
-	       |--- index.html
-	       |--- page.html
-	       |-- layouts/
-	           |--- footer.html
-	           |--- master.html
+		   |--- index.html
+		   |--- page.html
+		   |-- layouts/
+			   |--- footer.html
+			   |--- master.html
 
 	*/
 
@@ -50,12 +50,17 @@ func ExampleDefault() {
 func ExampleNew() {
 
 	/*
+		Project structure:
+
 		|-- app/views/
-		    |--- index.html
-		    |--- page.html
+		    |--- index.tpl
+		    |--- page.tpl
 		    |-- layouts/
-		        |--- footer.html
-		        |--- master.html
+		        |--- footer.tpl
+		        |--- head.tpl
+		        |--- master.tpl
+		    |-- partials/
+		        |--- ad.tpl
 	*/
 
 	//config

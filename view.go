@@ -67,7 +67,6 @@ Examples:
 https://godoc.org/github.com/foolin/goview/_examples
 
 */
-
 package goview
 
 import (
