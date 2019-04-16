@@ -1,0 +1,19 @@
+<!-- /views/page.html -->
+<!doctype html>
+
+<html>
+    <head>
+        <title>{{.title}}</title>
+    </head>
+
+    <body>
+        <a href="/"><- Back home!</a>
+        <hr>
+        This page not use master, Render code:
+        <pre>ctx.HTML(200, "page.html", gin.H{})</pre>
+        <br>
+        "page.html" - add extension  ".html" will render without master.
+        <hr>
+        {{include "layouts/footer"}}
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!-- /views/page.html -->
+<!doctype html>
+
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+
+        <title>{{.title}}</title>
+    </head>
+
+    <body>
+        <div class="container py-5">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Page</li>
+                </ol>
+            </nav>
+            <hr>
+            <p class="text-justify">
+                This page not use master, Render code:
+                <pre><code>goview.Render(200, "page.html", goview.M{})</code></pre>
+                <br>
+                "page.html" - add extension  ".html" will render without master.
+            </p>
+            <hr>
+            {{include "layouts/footer"}}
+        </div>
+    </body>
+</html>
