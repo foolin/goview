@@ -1,4 +1,4 @@
-# Basic
+# EchoView
 
 [![GoDoc Widget]][GoDoc] 
 

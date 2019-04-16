@@ -1,4 +1,4 @@
-# Basic
+# GinView
 
 [![GoDoc Widget]][GoDoc] 
 

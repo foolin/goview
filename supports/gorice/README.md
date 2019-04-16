@@ -1,4 +1,4 @@
-# Basic
+# GoRice
 
 [![GoDoc Widget]][GoDoc] 
 
