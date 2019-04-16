@@ -62,3 +62,7 @@ See in "examples/basic" folder
 ```
 
 [Gin example](https://github.com/foolin/goview/tree/master/_examples/gin)
+           
+## More examples
+
+See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a variety of examples.
