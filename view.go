@@ -64,7 +64,7 @@ Gin framework:
 https://godoc.org/github.com/foolin/goview/supports/ginview
 
 Examples:
-https://godoc.org/github.com/foolin/goview/_examples
+https://github.com/foolin/goview/_examples
 
 */
 package goview
