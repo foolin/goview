@@ -52,16 +52,18 @@ Project structure:
 
 Learn more at https://github.com/foolin/goview
 
+
+
 ================== Supports ==================
 
-Gin framework:
+Ginview for Gin framework:
 https://godoc.org/github.com/foolin/goview/supports/ginview
 
-Gin framework:
-https://godoc.org/github.com/foolin/goview/supports/ginview
+Echoview for Echo framework:
+https://godoc.org/github.com/foolin/goview/supports/echoview
 
-Gin framework:
-https://godoc.org/github.com/foolin/goview/supports/ginview
+Gorice for Go.rice:
+https://godoc.org/github.com/foolin/goview/supports/gorice
 
 Examples:
 https://github.com/foolin/goview/_examples
