@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func ExampleBasic() {
+func ExampleDefault() {
 
 	/*
 	   Project structure:
@@ -47,7 +47,7 @@ func ExampleBasic() {
 	http.ListenAndServe(":9090", nil)
 }
 
-func ExampleAdvance() {
+func ExampleNew() {
 
 	/*
 		|-- app/views/

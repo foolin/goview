@@ -2,13 +2,14 @@
 
 [![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis]
 
-Goview is a lightweight, simple and easy template library based on golang html/template for building Go web application. 
+Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
 
 ## Contents
 
 - [Install](#install)
 - [Features](#features)
 - [Docs](#docs)
+- [Supports](#supports)
 - [Usage](#usage)
     - [Overview](#overview)
     - [Config](#config)
@@ -22,7 +23,7 @@ Goview is a lightweight, simple and easy template library based on golang html/t
     - [Advance example](#advance-example)
     - [Multiple example](#multiple-example)
     - [go.rice example](#gorice-example)
-- [Supports](#supports)
+
 
 
 ## Install
@@ -49,6 +50,12 @@ go get -u github.com/foolin/goview
 
 ## Docs
 See https://www.godoc.org/github.com/foolin/goview
+
+
+## Supports
+- [ginview](https://github.com/foolin/goview/tree/master/supports/ginview) goview for gin framework
+- [echoview](https://github.com/foolin/goview/tree/master/supports/echoview) goview for echo framework
+- [go.rice](https://github.com/foolin/goview/tree/master/supports/gorice) goview for go.rice
 
 
 ## Usage
@@ -739,12 +746,6 @@ See in "examples/gorice" folder
 ```
 
 [gorice example](https://github.com/foolin/goview/tree/master/_examples/gorice)
-
-## Supports
-- go-chi The same as golang http
-- [ginview](https://github.com/foolin/goview/tree/master/supports/ginview) goview for gin framework
-- [echoview](https://github.com/foolin/goview/tree/master/supports/echoview) goview for echo framework
-- [go.rice](https://github.com/foolin/goview/tree/master/supports/gorice) goview for go.rice
 
 
 [GoDoc]: https://godoc.org/github.com/foolin/goview
