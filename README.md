@@ -321,6 +321,11 @@ See in "examples/basic" folder
 
 
 ### Gin example
+
+```bash
+go get -u github.com/foolin/goview/supports/ginview
+```
+
 ```go
 
 package main
@@ -375,6 +380,12 @@ See in "examples/basic" folder
 
 
 ### Echo example
+
+```bash
+go get -u github.com/foolin/goview/supports/echoview
+```
+
+
 ```go
 
 package main
@@ -675,6 +686,10 @@ See in "examples/multiple" folder
 
 
 ### go.rice example
+
+```bash
+go get -u github.com/foolin/goview/supports/gorice
+```
 
 ```go
 
