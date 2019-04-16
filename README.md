@@ -26,7 +26,7 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
     - [Advance example](#advance-example)
     - [Multiple example](#multiple-example)
     - [go.rice example](#gorice-example)
-
+    - [more examples](#more-examples)
 
 
 ## Install
@@ -764,6 +764,10 @@ See in "examples/gorice" folder
 ```
 
 [gorice example](https://github.com/foolin/goview/tree/master/_examples/gorice)
+
+### More examples
+
+See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a variety of examples.
 
 
 [GoDoc]: https://godoc.org/github.com/foolin/goview
