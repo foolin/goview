@@ -7,13 +7,7 @@
  */
 
 /*
-
-See https://github.com/foolin/goview for more information.
-*/
-/*
-
 Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
-
 
 Example:
 
