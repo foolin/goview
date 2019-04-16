@@ -1,12 +1,4 @@
 /*
- * Copyright 2018 Foolin.  All rights reserved.
- *
- * Use of this source code is governed by a MIT style
- * license that can be found in the LICENSE file.
- *
- */
-
-/*
 Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
 
 Example:
