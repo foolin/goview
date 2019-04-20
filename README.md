@@ -80,19 +80,9 @@ Project structure:
 Use default instance:
 
 ```go
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        err := goview.Render(w, http.StatusOK, "index", goview.M{
-            "title": "Index title!",
-            "add": func(a int, b int) int {
-                return a + b
-            },
-        })
-        if err != nil {
-            fmt.Fprintf(w, "Render index error: %v!", err)
-        }
-    
-    })
-
+    //write http.ResponseWriter
+    //"index" -> index.html
+    goview.Render(writer, http.StatusOK, "index", goview.M{})
 ```
 
 Use new instance with config:
@@ -118,19 +108,8 @@ Use new instance with config:
     //Set new instance
     goview.Use(gv)
     
-    //render index use `index` without `.tpl` extension, that will render with master layout.
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        err := goview.Render(w, http.StatusOK, "index", goview.M{
-            "title": "Index title!",
-            "add": func(a int, b int) int {
-                return a + b
-            },
-        })
-        if err != nil {
-            fmt.Fprintf(w, "Render index error: %v!", err)
-        }
-    
-    })
+    //write http.ResponseWriter
+    goview.Render(writer, http.StatusOK, "index", goview.M{})
 
 ```
 
@@ -138,7 +117,7 @@ Use new instance with config:
 Use multiple instance with config:
 
 ```go
-
+    //============== Frontend ============== //
     gvFrontend := goview.New(goview.Config{
         Root:      "views/frontend",
         Extension: ".tpl",
@@ -155,22 +134,10 @@ Use multiple instance with config:
         DisableCache: true,
     })
     
-    //render index use `index` without `.tpl` extension, that will render with master layout.
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        err := gvFrontend.Render(w, http.StatusOK, "index", goview.M{
-            "title": "Index title!",
-            "add": func(a int, b int) int {
-                return a + b
-            },
-        })
-        if err != nil {
-            fmt.Fprintf(w, "Render index error: %v!", err)
-        }
+    //write http.ResponseWriter
+    gvFrontend.Render(writer, http.StatusOK, "index", goview.M{})
     
-    })
-    
-    //Backend
-    
+    //============== Backend ============== //
     gvBackend := goview.New(goview.Config{
         Root:      "views/backend",
         Extension: ".tpl",
@@ -187,19 +154,8 @@ Use multiple instance with config:
         DisableCache: true,
     })
     
-    //render index use `index` without `.tpl` extension, that will render with master layout.
-    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        err := gvBackend.Render(w, http.StatusOK, "index", goview.M{
-            "title": "Index title!",
-            "add": func(a int, b int) int {
-                return a + b
-            },
-        })
-        if err != nil {
-            fmt.Fprintf(w, "Render index error: %v!", err)
-        }
-    
-    })
+    //write http.ResponseWriter
+    gvBackend.Render(writer, http.StatusOK, "index", goview.M{})
 
 ```
 
@@ -244,7 +200,7 @@ Render with master
 
 ```go
 //use name without extension `.html`
-goview.Render(w, http.StatusOK, "index", gin.H{})
+goview.Render(w, http.StatusOK, "index", goview.M{})
 ```
 
 The `w` is instance of  `http.ResponseWriter`
@@ -252,9 +208,8 @@ The `w` is instance of  `http.ResponseWriter`
 Render only file(not use master layout)
 ```go
 //use full name with extension `.html`
-goview.Render(w, http.StatusOK, "page.html", gin.H{})
+goview.Render(w, http.StatusOK, "page.html", goview.M{})
 ```
-
 
 
 
