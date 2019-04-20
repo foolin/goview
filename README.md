@@ -233,7 +233,7 @@ import (
 
 func main() {
 
-	//render index use `index` without `.tpl` extension, that will render with master layout.
+	//render index use `index` without `.html` extension, that will render with master layout.
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "index", goview.M{
 			"title": "Index title!",
@@ -247,7 +247,7 @@ func main() {
 
 	})
 
-	//render page use `page.tpl` with '.tpl' will only file template without master layout.
+	//render page use `page.tpl` with '.html' will only file template without master layout.
 	http.HandleFunc("/page", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "page.html", goview.M{"title": "Page file title!!"})
 		if err != nil {
@@ -422,7 +422,7 @@ func main() {
 
 	r := chi.NewRouter()
 
-	//render index use `index` without `.tpl` extension, that will render with master layout.
+	//render index use `index` without `.html` extension, that will render with master layout.
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "index", goview.M{
 			"title": "Index title!",
@@ -435,7 +435,7 @@ func main() {
 		}
 	})
 
-	//render page use `page.tpl` with '.tpl' will only file template without master layout.
+	//render page use `page.tpl` with '.html' will only file template without master layout.
 	r.Get("/page", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "page.html", goview.M{"title": "Page file title!!"})
 		if err != nil {
@@ -501,7 +501,7 @@ func main() {
 	//Set new instance
 	goview.Use(gv)
 
-	//render index use `index` without `.tpl` extension, that will render with master layout.
+	//render index use `index` without `.html` extension, that will render with master layout.
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "index", goview.M{
 			"title": "Index title!",
@@ -515,7 +515,7 @@ func main() {
 
 	})
 
-	//render page use `page.tpl` with '.tpl' will only file template without master layout.
+	//render page use `page.tpl` with '.html' will only file template without master layout.
 	http.HandleFunc("/page", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "page.tpl", goview.M{"title": "Page file title!!"})
 		if err != nil {
@@ -673,7 +673,7 @@ func main() {
 	//set engine for default instance
 	goview.Use(gv)
 
-	//render index use `index` without `.tpl` extension, that will render with master layout.
+	//render index use `index` without `.html` extension, that will render with master layout.
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "index", goview.M{
 			"title": "Index title!",
@@ -687,7 +687,7 @@ func main() {
 
 	})
 
-	//render page use `page.tpl` with '.tpl' will only file template without master layout.
+	//render page use `page.tpl` with '.html' will only file template without master layout.
 	http.HandleFunc("/page", func(w http.ResponseWriter, r *http.Request) {
 		err := goview.Render(w, http.StatusOK, "page.html", goview.M{"title": "Page file title!!"})
 		if err != nil {
