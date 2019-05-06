@@ -1,6 +1,6 @@
 # goview
 
-[![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis]
+[![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis] [![GoReportCard Widget]][GoReportCard] 
 
 Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
 
@@ -729,3 +729,5 @@ See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a 
 [GoDoc Widget]: https://godoc.org/github.com/foolin/goview?status.svg
 [Travis]: https://travis-ci.org/foolin/goview
 [Travis Widget]: https://travis-ci.org/foolin/goview.svg?branch=master
+[GoReportCard]: https://goreportcard.com/badge/github.com/foolin/goview
+[GoReportCard Widget]: https://goreportcard.com/report/github.com/foolin/goview
