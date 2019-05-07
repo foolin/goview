@@ -10,14 +10,14 @@ import (
 func ExampleDefault() {
 
 	/*
-	   Project structure:
+		   Project structure:
 
-	   |-- app/views/
-		   |--- index.html
-		   |--- page.html
-		   |-- layouts/
-			   |--- footer.html
-			   |--- master.html
+		   |-- app/views/
+			   |--- index.html
+			   |--- page.html
+			   |-- layouts/
+				   |--- footer.html
+				   |--- master.html
 
 	*/
 
