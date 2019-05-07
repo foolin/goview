@@ -1,5 +1,7 @@
 /*
-package goview Goview is a lightweight, minimalist and idiomatic template library
+package goview based on golang html/template for building Go web application
+
+Goview is a lightweight, minimalist and idiomatic template library
 based on golang html/template for building Go web application.
 
 Example:
