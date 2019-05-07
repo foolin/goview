@@ -30,7 +30,7 @@ func (e *ViewEngine) Render(w io.Writer, name string, data interface{}, c echo.C
 	return e.RenderWriter(w, name, data)
 }
 
-// HTML html render for template
+// Render html render for template
 // You should use helper func `Middleware()` to set the supplied
 // TemplateEngine and make `Render()` work validly.
 func Render(ctx echo.Context, code int, name string, data interface{}) error {

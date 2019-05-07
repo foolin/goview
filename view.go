@@ -1,7 +1,5 @@
 /*
-package goview
-
-Goview is a lightweight, minimalist and idiomatic template library
+package goview Goview is a lightweight, minimalist and idiomatic template library
 based on golang html/template for building Go web application.
 
 Example:
@@ -87,7 +85,7 @@ import (
 	"sync"
 )
 
-//const templateEngineKey = "httpx_templateEngine"
+// HtmlContentType const templateEngineKey = "httpx_templateEngine"
 var HtmlContentType = []string{"text/html; charset=utf-8"}
 
 // DefaultConfig default config
