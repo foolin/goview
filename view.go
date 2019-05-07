@@ -13,8 +13,8 @@ import (
 	"sync"
 )
 
-// HtmlContentType const templateEngineKey = "httpx_templateEngine"
-var HtmlContentType = []string{"text/html; charset=utf-8"}
+// HTMLContentType const templateEngineKey = "httpx_templateEngine"
+var HTMLContentType = []string{"text/html; charset=utf-8"}
 
 // DefaultConfig default config
 var DefaultConfig = Config{
@@ -77,7 +77,7 @@ func Default() *ViewEngine {
 func (e *ViewEngine) Render(w http.ResponseWriter, statusCode int, name string, data interface{}) error {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = HtmlContentType
+		header["Content-Type"] = HTMLContentType
 	}
 	w.WriteHeader(statusCode)
 	return e.executeRender(w, name, data)

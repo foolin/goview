@@ -57,7 +57,7 @@ func (v ViewRender) Render(w http.ResponseWriter) error {
 func (v ViewRender) WriteContentType(w http.ResponseWriter) {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
-		header["Content-Type"] = goview.HtmlContentType
+		header["Content-Type"] = goview.HTMLContentType
 	}
 }
 

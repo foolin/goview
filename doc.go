@@ -1,4 +1,4 @@
-//package goview a lightweight, minimalist and idiomatic template library
+//Package goview a lightweight, minimalist and idiomatic template library
 //based on golang html/template for building Go web application.
 //
 //Example:
