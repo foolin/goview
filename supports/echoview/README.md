@@ -4,7 +4,7 @@
 
 goview support for echo template v4 version.
 
-V4 version please see: github.com/foolin/goview-v4
+V4 version please see: [Goview for Echo v4/](https://github.com/foolin/goview/tree/master/supports/echoview-v4)
 
 ## Install
 
