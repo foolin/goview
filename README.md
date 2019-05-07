@@ -52,7 +52,7 @@ go get -u github.com/foolin/goview
 
 
 ## Docs
-See https://www.godoc.org/github.com/foolin/goview
+See <https://www.godoc.org/github.com/foolin/goview>
 
 
 ## Supports
@@ -339,8 +339,15 @@ See in "examples/basic" folder
 
 ### Echo example
 
+Echo <=v3 version:
 ```bash
 go get -u github.com/foolin/goview/supports/echoview
+```
+
+Echo v4 version:
+
+```bash
+go get -u github.com/foolin/goview/supports/echoview-v4
 ```
 
 
@@ -403,7 +410,7 @@ See in "examples/basic" folder
 ```
 
 [Echo example](https://github.com/foolin/goview/tree/master/_examples/echo)
-
+[Echo v4 example](https://github.com/foolin/goview/tree/master/_examples/echo-v4)
 
 
 ### Go-chi example
