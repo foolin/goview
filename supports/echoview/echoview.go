@@ -20,7 +20,7 @@ func New(config goview.Config) *ViewEngine {
 	}
 }
 
-// New new default config view engine
+// Default new default config view engine
 func Default() *ViewEngine {
 	return New(goview.DefaultConfig)
 }

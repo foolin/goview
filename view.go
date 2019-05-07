@@ -1,5 +1,8 @@
 /*
-Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
+package goview
+
+Goview is a lightweight, minimalist and idiomatic template library
+based on golang html/template for building Go web application.
 
 Example:
 
@@ -154,7 +157,7 @@ func (e *ViewEngine) Render(w http.ResponseWriter, statusCode int, name string, 
 	return e.executeRender(w, name, data)
 }
 
-// Render render template with io.Writer
+// RenderWriter render template with io.Writer
 func (e *ViewEngine) RenderWriter(w io.Writer, name string, data interface{}) error {
 	return e.executeRender(w, name, data)
 }
