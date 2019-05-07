@@ -8,24 +8,29 @@ import (
 
 const templateEngineKey = "foolin-goview-echoview"
 
+// ViewEngine view engine for echo
 type ViewEngine struct {
 	*goview.ViewEngine
 }
 
+// New new view engine
 func New(config goview.Config) *ViewEngine {
 	return &ViewEngine{
 		ViewEngine: goview.New(config),
 	}
 }
 
+// New new default config view engine
 func Default() *ViewEngine {
 	return New(goview.DefaultConfig)
 }
 
+// Render render template for echo interface
 func (e *ViewEngine) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
 	return e.RenderWriter(w, name, data)
 }
 
+// HTML html render for template
 // You should use helper func `Middleware()` to set the supplied
 // TemplateEngine and make `Render()` work validly.
 func Render(ctx echo.Context, code int, name string, data interface{}) error {
@@ -37,11 +42,12 @@ func Render(ctx echo.Context, code int, name string, data interface{}) error {
 	return ctx.Render(code, name, data)
 }
 
-//New gin middleware for func `goview.Render()`
+// NewMiddleware echo middleware for func `echoview.Render()`
 func NewMiddleware(config goview.Config) echo.MiddlewareFunc {
 	return Middleware(New(config))
 }
 
+// Middleware echo middleware wrapper
 func Middleware(e *ViewEngine) echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
