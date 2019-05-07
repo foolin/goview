@@ -4,12 +4,12 @@ import (
 	"github.com/foolin/goview"
 )
 
-// New gin template engine, default views root.
+// New new gorice template engine, default views root.
 func New(viewsRootBox *rice.Box) *goview.ViewEngine {
 	return NewWithConfig(viewsRootBox, goview.DefaultConfig)
 }
 
-// New gin template engine
+// NewWithConfig gorice template engine
 // Important!!! The viewsRootBox's name and config.Root must be consistent.
 func NewWithConfig(viewsRootBox *rice.Box, config goview.Config) *goview.ViewEngine {
 	config.Root = viewsRootBox.Name()

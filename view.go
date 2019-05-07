@@ -87,6 +87,7 @@ import (
 //const templateEngineKey = "httpx_templateEngine"
 var HtmlContentType = []string{"text/html; charset=utf-8"}
 
+// DefaultConfig default config
 var DefaultConfig = Config{
 	Root:         "views",
 	Extension:    ".html",
@@ -97,6 +98,7 @@ var DefaultConfig = Config{
 	Delims:       Delims{Left: "{{", Right: "}}"},
 }
 
+// ViewEngine view template engine
 type ViewEngine struct {
 	config      Config
 	tplMap      map[string]*template.Template
@@ -104,6 +106,7 @@ type ViewEngine struct {
 	fileHandler FileHandler
 }
 
+// Config configuration options
 type Config struct {
 	Root         string           //view root
 	Extension    string           //template extension
@@ -114,15 +117,19 @@ type Config struct {
 	Delims       Delims           //delimeters
 }
 
+// M map interface for data
 type M map[string]interface{}
 
+// Delims delims for template
 type Delims struct {
 	Left  string
 	Right string
 }
 
+// FileHandler file handler interface
 type FileHandler func(config Config, tplFile string) (content string, err error)
 
+// New new template engine
 func New(config Config) *ViewEngine {
 	return &ViewEngine{
 		config:      config,
@@ -132,10 +139,12 @@ func New(config Config) *ViewEngine {
 	}
 }
 
+// Default new default template engine
 func Default() *ViewEngine {
 	return New(DefaultConfig)
 }
 
+// Render render template with http.ResponseWriter
 func (e *ViewEngine) Render(w http.ResponseWriter, statusCode int, name string, data interface{}) error {
 	header := w.Header()
 	if val := header["Content-Type"]; len(val) == 0 {
@@ -145,6 +154,7 @@ func (e *ViewEngine) Render(w http.ResponseWriter, statusCode int, name string, 
 	return e.executeRender(w, name, data)
 }
 
+// Render render template with io.Writer
 func (e *ViewEngine) RenderWriter(w io.Writer, name string, data interface{}) error {
 	return e.executeRender(w, name, data)
 }
@@ -229,6 +239,7 @@ func (e *ViewEngine) executeTemplate(out io.Writer, name string, data interface{
 	return nil
 }
 
+// SetFileHandler set file handler
 func (e *ViewEngine) SetFileHandler(handle FileHandler) {
 	if handle == nil {
 		panic("FileHandler can't set nil!")
@@ -236,6 +247,7 @@ func (e *ViewEngine) SetFileHandler(handle FileHandler) {
 	e.fileHandler = handle
 }
 
+// DefaultFileHandler new default file handler
 func DefaultFileHandler() FileHandler {
 	return func(config Config, tplFile string) (content string, err error) {
 		// Get the absolute path of the root template
