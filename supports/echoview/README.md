@@ -2,9 +2,12 @@
 
 [![GoDoc Widget]][GoDoc] 
 
-goview support for echo template
+goview support for echo template v4 version.
+
+V4 version please see: github.com/foolin/goview-v4
 
 ## Install
+
 ```bash
 
 go get -u github.com/foolin/goview

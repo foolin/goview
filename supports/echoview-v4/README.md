@@ -2,7 +2,7 @@
 
 [![GoDoc Widget]][GoDoc] 
 
-goview support for echo template
+goview support for echo template v4 version.
 
 ## Install
 ```bash
