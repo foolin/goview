@@ -12,6 +12,16 @@ var cases = []struct {
 	Out  string
 }{
 	{
+		Name: "echo.tpl",
+		Data: M{"name": "GoView"},
+		Out:  "$GoView",
+	},
+	{
+		Name: "include",
+		Data: M{"name": "GoView"},
+		Out:  "<v>IncGoView</v>",
+	},
+	{
 		Name: "index",
 		Data: M{},
 		Out:  "<v>Index</v>",
@@ -26,11 +36,6 @@ var cases = []struct {
 			"b": 2,
 		},
 		Out: "<v>3</v>",
-	},
-	{
-		Name: "echo.tpl",
-		Data: M{"Name": "GoView"},
-		Out:  "$GoView",
 	},
 }
 

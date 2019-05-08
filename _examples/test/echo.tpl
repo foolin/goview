@@ -1,1 +1,1 @@
-{{echo .Name}}
+{{echo .name}}
