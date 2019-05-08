@@ -1,0 +1,1 @@
+{{define "content"}}{{call $.sum .a .b}}{{end}}

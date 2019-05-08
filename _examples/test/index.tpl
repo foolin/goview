@@ -1,0 +1,1 @@
+{{define "content"}}Index{{end}}
