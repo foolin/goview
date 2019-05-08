@@ -1,6 +1,7 @@
 package gorice
 
 import (
+	rice "github.com/GeertJohan/go.rice"
 	"github.com/foolin/goview"
 )
 
