@@ -3,7 +3,7 @@
 
 <html>
     <head>
-        <title>{{.title}}</title>
+        <title>{{.Title}}</title>
         {{include "layouts/head"}}
     </head>
 
