@@ -2,7 +2,7 @@
 
 [![GoDoc Widget]][GoDoc] [![Travis Widget]][Travis] [![GoReportCard Widget]][GoReportCard] 
 
-Goview is a lightweight, minimalist and idiomatic template library based on golang html/template for building Go web application.
+Goview is a lightweight, minimalist and idiomatic template library based on golang [html/template](https://golang.org/pkg/html/template/) for building Go web application.
 
 ## Contents
 
