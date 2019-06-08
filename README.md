@@ -738,3 +738,5 @@ See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a 
 [Travis Widget]: https://travis-ci.org/foolin/goview.svg?branch=master
 [GoReportCard]: https://goreportcard.com/report/github.com/foolin/goview
 [GoReportCard Widget]: https://goreportcard.com/badge/github.com/foolin/goview
+[GoCover]: https://goreportcard.com/report/github.com/foolin/goview
+[GoCover Widget]: https://goreportcard.com/badge/github.com/foolin/goview
