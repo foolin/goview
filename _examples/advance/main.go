@@ -57,7 +57,9 @@ func main() {
 
 	//render page use `page.tpl` with '.tpl' will only file template without master layout.
 	http.HandleFunc("/page", func(w http.ResponseWriter, r *http.Request) {
-		err := goview.Render(w, http.StatusOK, "page.tpl", goview.M{"Title": "Page file title!!"})
+		err := goview.Render(w, http.StatusOK, "page.tpl", goview.M{
+			"Title": "Page file title!!",
+		})
 		if err != nil {
 			fmt.Fprintf(w, "Render page.html error: %v!", err)
 		}
