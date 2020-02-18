@@ -8,6 +8,7 @@
         {{include "layouts/head"}}
     </head>
     <body>
+        {{safeHTML "<!-- body is here!!! -->"}}
         {{template "content" .}}
         <hr>
         {{template "ad" .}}
