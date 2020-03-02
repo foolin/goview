@@ -1,10 +1,11 @@
 package ginview
 
 import (
+	"net/http"
+
 	"github.com/foolin/goview"
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/render"
-	"net/http"
 )
 
 const templateEngineKey = "foolin-goview-ginview"
@@ -23,8 +24,13 @@ type ViewRender struct {
 
 // New new view engine for gin
 func New(config goview.Config) *ViewEngine {
+	return Wrap(goview.New(config))
+}
+
+// Wrap wrap view engine for goview.ViewEngine
+func Wrap(engine *goview.ViewEngine) *ViewEngine {
 	return &ViewEngine{
-		ViewEngine: goview.New(config),
+		ViewEngine: engine,
 	}
 }
 

@@ -740,3 +740,9 @@ See [_examples/](https://github.com/foolin/goview/blob/master/_examples/) for a 
 [GoReportCard Widget]: https://goreportcard.com/badge/github.com/foolin/goview
 [GoCover]: https://goreportcard.com/report/github.com/foolin/goview
 [GoCover Widget]: https://goreportcard.com/badge/github.com/foolin/goview
+
+
+### Todo
+ [ ] Add Partials support directory or glob
+ [ ] Add functions support.
+ 

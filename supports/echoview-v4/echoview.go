@@ -15,8 +15,13 @@ type ViewEngine struct {
 
 // New new view engine
 func New(config goview.Config) *ViewEngine {
+	return Wrap(goview.New(config))
+}
+
+// Wrap wrap view engine for goview.ViewEngine
+func Wrap(engine *goview.ViewEngine) *ViewEngine {
 	return &ViewEngine{
-		ViewEngine: goview.New(config),
+		ViewEngine: engine,
 	}
 }
 
