@@ -11,6 +11,7 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
 - [Docs](#docs)
 - [Supports](#supports)
     - [Gin Framework](https://github.com/foolin/goview/tree/master/supports/ginview)
+    - [Iris Framework](https://github.com/foolin/goview/tree/master/supports/irisview)
     - [Echo Framework](https://github.com/foolin/goview/tree/master/supports/echoview)
     - [Go.Rice](https://github.com/foolin/goview/tree/master/supports/gorice)
 - [Usage](#usage)
@@ -21,6 +22,8 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
 - [Examples](#examples)
     - [Basic example](#basic-example)
     - [Gin example](#gin-example)
+    - [Iris example](#iris-example)
+    - [Iris multiple example](#iris-multiple-example)
     - [Echo example](#echo-example)
     - [Go-chi example](#go-chi-example)
     - [Advance example](#advance-example)
@@ -48,7 +51,7 @@ go get github.com/foolin/goview
 * **Multiple Engine** - Support multiple templates for frontend and backend.
 * **No external dependencies** - plain ol' Go html/template.
 * **Gorice** - Support gorice for package resources.
-* **Gin/Echo/Chi** - Support gin framework,echo framework, go-chi framework.
+* **Gin/Iris/Echo/Chi** - Support gin framework, Iris framework, echo framework, go-chi framework.
 
 
 ## Docs
@@ -57,6 +60,7 @@ See <https://www.godoc.org/github.com/foolin/goview>
 
 ## Supports
 - **[ginview](https://github.com/foolin/goview/tree/master/supports/ginview)** goview for gin framework
+- **[irisview](https://github.com/foolin/goview/tree/master/supports/irisview)** goview for Iris framework
 - **[echoview](https://github.com/foolin/goview/tree/master/supports/echoview)** goview for echo framework
 - **[gorice](https://github.com/foolin/goview/tree/master/supports/gorice)** goview for go.rice
 
@@ -335,7 +339,150 @@ See in "examples/basic" folder
 
 [Gin example](https://github.com/foolin/goview/tree/master/_examples/gin)
 
+### Iris example
 
+```bash
+$ go get github.com/foolin/goview/supports/irisview
+```
+
+```go
+package main
+
+import (
+	"github.com/foolin/goview/supports/irisview"
+	"github.com/kataras/iris/v12"
+)
+
+func main() {
+	app := iris.New()
+
+	// Register the goview template engine.
+	app.RegisterView(irisview.Default())
+
+	app.Get("/", func(ctx iris.Context) {
+		// Render with master.
+		ctx.View("index", iris.Map{
+			"title": "Index title!",
+			"add": func(a int, b int) int {
+				return a + b
+			},
+		})
+	})
+
+	app.Get("/page", func(ctx iris.Context) {
+		// Render only file, must full name with extension.
+		ctx.View("page.html", iris.Map{"title": "Page file title!!"})
+	})
+
+	app.Listen(":9090")
+}
+```
+
+Project structure:
+```go
+|-- app/views/
+    |--- index.html          
+    |--- page.html
+    |-- layouts/
+        |--- footer.html
+        |--- master.html
+    
+
+See in "examples/iris" folder
+```
+
+[Iris example](https://github.com/foolin/goview/tree/master/_examples/iris)
+
+
+### Iris multiple example
+
+```go
+package main
+
+import (
+	"html/template"
+	"time"
+
+	"github.com/foolin/goview"
+	"github.com/foolin/goview/supports/irisview"
+	"github.com/kataras/iris/v12"
+)
+
+func main() {
+	app := iris.New()
+
+	// Register a new template engine.
+	app.RegisterView(irisview.New(goview.Config{
+		Root:      "views/frontend",
+		Extension: ".html",
+		Master:    "layouts/master",
+		Partials:  []string{"partials/ad"},
+		Funcs: template.FuncMap{
+			"copy": func() string {
+				return time.Now().Format("2006")
+			},
+		},
+		DisableCache: true,
+	}))
+
+	app.Get("/", func(ctx iris.Context) {
+		ctx.View("index", iris.Map{
+			"title": "Frontend title!",
+		})
+	})
+
+	//=========== Backend ===========//
+
+	// Assign a new template middleware.
+	mw := irisview.NewMiddleware(goview.Config{
+		Root:      "views/backend",
+		Extension: ".html",
+		Master:    "layouts/master",
+		Partials:  []string{},
+		Funcs: template.FuncMap{
+			"copy": func() string {
+				return time.Now().Format("2006")
+			},
+		},
+		DisableCache: true,
+	})
+
+	backendGroup := app.Party("/admin", mw)
+
+	backendGroup.Get("/", func(ctx iris.Context) {
+		// Use the ctx.View as you used to. Zero changes to your codebase,
+		// even if you use multiple templates.
+		ctx.View("index", iris.Map{
+			"title": "Backend title!",
+		})
+	})
+
+	app.Listen(":9090")
+}
+```
+
+Project structure:
+```go
+|-- app/views/
+    |-- fontend/
+        |--- index.html
+        |-- layouts/
+            |--- footer.html
+            |--- head.html
+            |--- master.html
+        |-- partials/
+     	   |--- ad.html
+    |-- backend/
+        |--- index.html
+        |-- layouts/
+            |--- footer.html
+            |--- head.html
+            |--- master.html
+        
+See in "examples/iris-multiple" folder
+```
+
+[Iris multiple example](https://github.com/foolin/goview/tree/master/_examples/iris-multiple)
 
 ### Echo example
 

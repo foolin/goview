@@ -1,0 +1,14 @@
+{{define "head"}}
+    <style>
+        .hello{ color: red;}
+        hr{ border: 1px #ccc dashed;}
+    </style>
+{{end}}
+
+
+{{define "content"}}
+    <h1 class="hello">This is content!!!!</h1>
+    <p>123 + 333 = {{call $.add 123 333}}</p>
+    <hr>
+    <p><a href="/page">Page render</a></p>
+{{end}}
