@@ -19,6 +19,7 @@ Goview is a lightweight, minimalist and idiomatic template library based on gola
     - [Config](#config)
     - [Include syntax](#include-syntax)
     - [Render name](#render-name)
+	- [Custom template functions](#custom-template-functions)
 - [Examples](#examples)
     - [Basic example](#basic-example)
     - [Gin example](#gin-example)
@@ -215,7 +216,41 @@ Render only file(not use master layout)
 goview.Render(w, http.StatusOK, "page.html", goview.M{})
 ```
 
+### Custom template functions
 
+We have two type of functions `global functions`, and `temporary functions`.
+
+`Global functions` are set within the `config`.
+
+```go
+goview.Config{
+	Funcs: template.FuncMap{
+		"reverse": e.Reverse,
+	},
+}
+```
+
+```go
+//template file
+{{ reverse "route-name" }}
+```
+
+`Temporary functions` are set inside the handler.
+
+```go
+http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	err := goview.Render(w, http.StatusOK, "index", goview.M{
+		"reverse": e.Reverse,
+	})
+	if err != nil {
+		fmt.Fprintf(w, "Render index error: %v!", err)
+	}
+})
+```
+```go
+//template file
+{{ call $.reverse "route-name" }}
+```
 
 
 
