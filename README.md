@@ -108,6 +108,7 @@ Use new instance with config:
             },
         },
         DisableCache: true,
+	Delims:    Delims{Left: "{{", Right: "}}"},
     })
     
     //Set new instance
@@ -137,6 +138,7 @@ Use multiple instance with config:
             },
         },
         DisableCache: true,
+	Delims:       Delims{Left: "{{", Right: "}}"},
     })
     
     //write http.ResponseWriter
@@ -157,6 +159,7 @@ Use multiple instance with config:
             },
         },
         DisableCache: true,
+	Delims:       Delims{Left: "{{", Right: "}}"},
     })
     
     //write http.ResponseWriter
@@ -179,6 +182,7 @@ goview.Config{
         // more funcs
     },
     DisableCache: false, //if disable cache, auto reload template file for debug.
+    Delims:       Delims{Left: "{{", Right: "}}"},
 }
 ```
 
