@@ -7,7 +7,7 @@ goview support for echo template v4 version.
 ## Install
 ```bash
 
-go get -u github.com/foolin/goview-v4
+go get -u github.com/foolin/goview
 
 go get -u github.com/foolin/goview/supports/echoview-v4
 
