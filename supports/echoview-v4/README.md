@@ -20,9 +20,9 @@ go get -u github.com/foolin/goview/supports/echoview-v4
 package main
 
 import (
-	"github.com/foolin/goview/supports/echoview"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/foolin/goview/supports/echoview-v4"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/middleware/v4"
 	"net/http"
 )
 
