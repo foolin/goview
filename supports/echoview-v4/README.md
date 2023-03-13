@@ -7,7 +7,7 @@ goview support for echo template v4 version.
 ## Install
 ```bash
 
-go get -u github.com/foolin/goview-v4
+go get -u github.com/foolin/goview
 
 go get -u github.com/foolin/goview/supports/echoview-v4
 
@@ -20,9 +20,9 @@ go get -u github.com/foolin/goview/supports/echoview-v4
 package main
 
 import (
-	"github.com/foolin/goview/supports/echoview"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/middleware"
+	"github.com/foolin/goview/supports/echoview-v4"
+	"github.com/labstack/echo/v4"
+	"github.com/labstack/echo/middleware/v4"
 	"net/http"
 )
 
