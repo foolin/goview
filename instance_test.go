@@ -2,7 +2,7 @@ package goview
 
 import (
 	"html/template"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/http/httptest"
 	"testing"
@@ -52,7 +52,7 @@ func assertRecorder(t *testing.T, recorder *httptest.ResponseRecorder, expectSta
 	if result.StatusCode != expectStatusCode {
 		t.Errorf("actual: %v, expect: %v", result.StatusCode, expectStatusCode)
 	}
-	resultBytes, err := ioutil.ReadAll(result.Body)
+	resultBytes, err := io.ReadAll(result.Body)
 	if err != nil {
 		t.Errorf("read result body error: %v", err)
 		return
