@@ -60,7 +60,7 @@ func TestViewEngine_RenderWriter(t *testing.T) {
 			t.Errorf("name: %v, data: %v, error: %v", v.Name, v.Data, err)
 			continue
 		}
-		val := string(buff.Bytes())
+		val := buff.String()
 		if val != v.Out {
 			t.Errorf("actual: %v, expect: %v", val, v.Out)
 		}
